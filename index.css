@@ -1,0 +1,10 @@
+.no-close .ui-dialog-titlebar-close {
+  display: none;
+}
+
+.custom-overlay
+{
+    background-color: rgb(71, 71, 71);
+    opacity: 1.5;
+    z-index: 1001;
+}

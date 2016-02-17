@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Test</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="bower_components\jquery-ui\themes\base\jquery-ui.min.css">
+
+  <!-- Custom theme example -->
+  <!-- <link rel="stylesheet" href="bower_components\jquery-ui\themes\vader\jquery-ui.min.css"> -->
+
+  <link rel="stylesheet" href="index.css" media="screen" title="no title" charset="utf-8">
+  <script src="bower_components\jquery\dist\jquery.min.js"></script>
+  <script src="bower_components\jquery-ui\jquery-ui.min.js"></script>
+  <script>
+    function openDialog() {
+      $("#dialog-id").dialog({
+        // dialogClass: "no-close",  This would remove the close icon on the top right
+        draggable: false,
+        modal: true,
+        closeOnEscape: true,
+        width: 800,
+        height: 900,
+        open: function() {
+          $('.ui-widget-overlay').addClass('custom-overlay');
+          $("#dialog-id").css('overflow', 'hidden')
+        },
+        close: function() {
+          $('.ui-widget-overlay').removeClass('custom-overlay');
+        }
+
+      });
+    }
+  </script>
+
+</head>
+
+<body>
+  <div id="dialog-id" title="Title Here" style="display:none">
+    <iframe src="https://jqueryui.com" height="100%" width="100%"></iframe>
+  </div>
+  <button onclick="openDialog()" type="button" name="button">Open Dialog</button>
+</body>
+
+</html>
